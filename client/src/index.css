@@ -1,0 +1,98 @@
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 40%;
+}
+
+/* NAV BAR */
+.Nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: radial-gradient(#fbc1cc, #fa99b2);
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+    align-items: center;
+
+}
+
+#search {
+    margin-left: 16px;
+    height: 30px;
+    width: .1%;
+    border: none;
+    outline: none;
+    border: 3px solid rgba(0,0,0,0);
+    border-radius: 20px;
+    background-image: url('../public/search-icon.png');
+    background-size: 25px;
+    background-position: 10px 5px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    transition: width 0.4s ease-in;
+}
+
+#search:focus {
+    border: 3px solid #b69efe;
+    width: 40%;
+}
+
+.Nav ul {
+    list-style-type: none;
+}
+
+.Nav li {
+    float: left;
+}
+
+.Nav a {
+    text-decoration: none;
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 8px 16px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+    transition: all 0.5s;
+}
+
+.Nav a:hover {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+/* EXPERIENTE */
+.ListaExperiente {
+    display: flex;
+    justify-content: center;
+}
+
+.ListaExperiente-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.Experienta {
+    margin: 20px;
+    padding: 20px;
+    width: 500px;
+    min-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+    background: radial-gradient(#76b2fe, #b69efe);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: white;
+}
+
+.Experienta:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+}
