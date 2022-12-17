@@ -1,98 +1,574 @@
-#root {
-    display: flex;
-    justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gg Sans";
 }
 
-.App {
-    width: 40%;
+@font-face {
+  font-family: 'Gg Sans';
+  src: local('Gg Sans Normal'), local('Gg-Sans-Normal'),
+      url('./fonts/ggsans-Normal/ggsans-Normal.woff2') format('woff2'),
+      url('./fonts/ggsans-Normal/ggsans-Normal.woff') format('woff'),
+      url('./fonts/ggsans-Normal/ggsans-Normal.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-/* NAV BAR */
-.Nav {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: radial-gradient(#fbc1cc, #fa99b2);
-    border-radius: 10px;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    display: flex;
-    align-items: center;
-
+.lista-experiente-center {
+  display: flex;
+  justify-content: center;
 }
 
-#search {
-    margin-left: 16px;
-    height: 30px;
-    width: .1%;
-    border: none;
-    outline: none;
-    border: 3px solid rgba(0,0,0,0);
-    border-radius: 20px;
-    background-image: url('../public/search-icon.png');
-    background-size: 25px;
-    background-position: 10px 5px;
-    background-repeat: no-repeat;
-    padding-left: 40px;
-    transition: width 0.4s ease-in;
+.lista-experiente {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
-#search:focus {
-    border: 3px solid #b69efe;
-    width: 40%;
+/* Navigation bar */
+
+.nav-center {
+  display: flex;
+  justify-content: center;
 }
 
-.Nav ul {
-    list-style-type: none;
+.lista-experiente nav {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  background-color: #ed1c24;
+  border-radius: 20px;
+  position: fixed;
 }
 
-.Nav li {
-    float: left;
+.lista-experiente ul {
+  list-style-type: none;
+  overflow: hidden;
 }
 
-.Nav a {
-    text-decoration: none;
-    display: block;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    padding: 8px 16px;
-    border-bottom: 3px solid rgba(255, 255, 255, 0);
-    transition: all 0.5s;
+.lista-experiente li {
+  float: left;
+  padding: 8px;
 }
 
-.Nav a:hover {
-    border-bottom: 3px solid rgba(255, 255, 255, 0.6);
-    cursor: pointer;
+.lista-experiente li a {
+  text-decoration: none;
+  display: block;
+  color: #ffffff;
+  padding: 2px 0px 2px 0px;
+  border-bottom: 2px solid #ed1c24;
+  transition: border-bottom .1s ease-in-out;
 }
 
-/* EXPERIENTE */
-.ListaExperiente {
-    display: flex;
-    justify-content: center;
+.lista-experiente li a:hover {
+  border-bottom: 2px solid white;
 }
 
-.ListaExperiente-container {
-    display: flex;
-    flex-direction: column;
+.lista-experiente input[type=text] {
+  padding: 4px 0px 2px 30px;
+  width: 200px;
+  border-radius: 20px;
+  background-image: url('../public/images/search-icon.png');
+  background-position: 5px 3px; 
+  background-size: 20px;
+  background-repeat: no-repeat;
+  border: 2px solid #ed1c24;
 }
 
-.Experienta {
-    margin: 20px;
-    padding: 20px;
-    width: 500px;
-    min-height: 200px;
-    border-radius: 10px;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
-    transition: all 0.2s;
-    background: radial-gradient(#76b2fe, #b69efe);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: white;
+.lista-experiente input[type=text]:focus {
+  outline: none;
+  border: 2px solid #3d20d1;
 }
 
-.Experienta:hover {
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
-    transform: scale(1.01);
+/* Lista Experiente Cards */
+
+.experiente-center {
+  display: flex;
+  justify-content: center;
+}
+
+.experiente-column {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.experienta:first-child {
+  margin-top: 60px;
+}
+
+.experienta {
+  margin-top: 20px;
+  background-color: #3d20d1;
+  color: #ffffff;
+  border-radius: 20px;
+  background-image: url("../public/svg/wave.svg");
+  background-repeat: no-repeat;
+  background-size: 400%;
+  box-shadow: -6px 11px 15px 5px #C1C2C3;
+}
+
+.category-bold {
+  font-weight: bold;
+}
+
+.experienta p {
+  margin: 10px;
+}
+
+.user-post {
+  float: right;
+}
+
+/* Register */
+#register, #login {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 400px;
+  width: 30%;
+  background-color: #5865f2;
+  border-radius: 20px;
+  border: 3px solid #2d7d46;
+  box-shadow: -6px 11px 15px 5px #C1C2C3;
+}
+
+#register h1, #login h1 {
+  padding-top: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+#form-container {
+  width: 80%;
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+#form-container label {
+  color: white;
+  font-size: 20px;
+}
+
+#form-container input {
+  margin-top: 10px;
+  border-radius: 16px;
+  background-color: #2c3033;
+  font-size: 20px;
+  color: white;
+  padding: 4px 8px;
+}
+
+#form-container input:focus {
+  outline: none;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#buttons a, #buttons button {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  width: 40%;
+  border-style: none;
+  cursor: pointer;
+  background-color: #2c3033;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all .1s ease-in-out;
+}
+
+#buttons button {
+  background-color: #2d7d46;
+}
+
+#form-container a:hover, #form-container button:hover {
+  background-color: #fff;
+  color: #3d20d1;
+  box-shadow: 0px 0px 18px 5px rgba(44,48,51,0.5);
+}
+
+.errorSquare {
+  width: 60%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #ed1c24;
+  color: white;
+  border-radius: 16px;
+  padding: 8px 16px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: -20px;
+}
+
+/* Main */
+#account-info {
+  position: fixed;
+  border-radius: 20px;
+  top: 5%;
+  width: 20%;
+  height: 240px;
+  background-color: #ed1c24;
+  background-image: url("../public/svg/wave2.svg");
+  background-repeat: no-repeat;
+  background-size: 400%;
+  box-shadow: -6px 11px 15px 5px #C1C2C3;
+}
+
+#account-info h2 {
+  color: #ffffff;
+  margin-top: 20px;
+  margin-left: 10%;
+}
+
+#account-info button {
+  display: block;
+  margin-top: 20px;
+  margin-left: 10%;
+  background-color: white;
+  text-decoration: none;
+  border-style: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: #3d20d1;
+  cursor: pointer;
+  transition: box-shadow .1s ease-in-out;
+}
+
+#account-info button:hover {
+  box-shadow: 0px 0px 18px 5px rgba(44,48,51,0.5);
+}
+
+#account-info button a, #account-info button a:active{
+  text-decoration: none;
+  color: #3d20d1;
+  display: block;
+}
+
+.trash, .edit {
+  margin: 0px 0px 5px 5px;
+}
+
+.trash {
+  font-size: 20px;
+  border-style: none;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: #ed1c24;
+  color: #ffffff;
+}
+
+.edit {
+  font-size: 20px;
+  border-style: none;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: #2d7d46;
+  color: #ffffff;
+}
+
+.trash i, .edit i {
+  padding: 8px;
+}
+
+.trash a, .edit a{
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.trash:hover, .edit:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+}
+
+/* Postare */
+#post {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 700px;
+  width: 40%;
+  background-color: #3d20d1;
+  border-radius: 20px;
+  border: 5px solid #8c95f6;
+  box-shadow: -6px 11px 15px 5px #C1C2C3;
+}
+
+#post h1 {
+  text-align: center;
+  color: #fff;
+  padding-top: 20px;
+}
+
+#post #form-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 85%;
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+}
+
+#post #form-container label {
+  display: inline-block;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+}
+
+#post #form-container input {
+  margin-top: 10px;
+  border-radius: 16px;
+  background-color: rgb(237, 28, 36, 0.8);
+  font-size: 20px;
+  color: white;
+  padding: 4px 8px;
+  border: 3px solid #2d7d46;
+}
+
+#post #form-container input:focus, #post #form-container textarea:focus {
+  outline: none;
+  background-color: rgb(237, 28, 36);
+}
+
+#post #observatiiContainer label {
+  position: relative;
+  top: -50px;
+}
+
+#post #form-container textarea {
+  resize: none;
+  margin-top: 10px;
+  border-radius: 16px;
+  width: 40%;
+  color: white;
+  padding: 8px 6px;
+  border: 3px solid #2d7d46;
+  background-color: rgb(237, 28, 36, 0.8);
+}
+
+#post #mijlocTransport {
+  margin-top: 10px;
+  border-radius: 16px;
+  background-color: rgb(237, 28, 36, 0.8);
+  color: white;
+  font-size: 20px;
+  padding: 8px 8px;
+  border: 3px solid #2d7d46;
+}
+
+#post #mijlocTransport:focus {
+  background-color: rgb(237, 28, 36);
+}
+
+#post #buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#post #buttons button {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  border-style: none;
+  cursor: pointer;
+  background-color: #2d7d46;
+  color: #fff;
+  padding: 4px 32px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all .1s ease-in-out;
+}
+
+#post #form-container button:hover {
+  background-color: #fff;
+  color: #3d20d1;
+  box-shadow: 0px 0px 18px 5px rgba(44,48,51,0.5);
+}
+
+/* Change Password */
+#change-password {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 400px;
+  width: 30%;
+  background-color: #5865f2;
+  border-radius: 20px;
+  border: 3px solid #ed1c24;
+  box-shadow: -6px 11px 15px 5px #C1C2C3;
+}
+
+#change-password h1 {
+  padding-top: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+#change-password #form-container {
+  width: 80%;
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+#change-password #form-container label {
+  color: white;
+  font-size: 20px;
+}
+
+#change-password #form-container input {
+  margin-top: 10px;
+  border-radius: 16px;
+  background-color: #2c3033;
+  font-size: 20px;
+  color: white;
+  padding: 4px 8px;
+}
+
+#change-password #form-container input:focus {
+  outline: none;
+}
+
+#change-password #buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#change-password #buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 60px;
+  border-style: none;
+  cursor: pointer;
+  background-color: #2c3033;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all .1s ease-in-out;
+}
+
+#change-password #buttons button:first-child {
+  background-color: #ed1c24;
+}
+
+#change-password #form-container button:hover {
+  background-color: #fff;
+  color: #3d20d1;
+  box-shadow: 0px 0px 18px 5px rgba(44,48,51,0.5);
+}
+
+/* Delete Account */
+#delete-account {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 400px;
+  width: 30%;
+  background-color: #5865f2;
+  border-radius: 20px;
+  border: 3px solid #ed1c24;
+  box-shadow: -6px 11px 15px 5px #C1C2C3;
+}
+
+#delete-account h1 {
+  padding-top: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+#delete-account #form-container {
+  width: 80%;
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+#delete-account #form-container label {
+  color: white;
+  font-size: 20px;
+}
+
+#delete-account #form-container input {
+  margin-top: 10px;
+  border-radius: 16px;
+  background-color: #2c3033;
+  font-size: 20px;
+  color: white;
+  padding: 4px 8px;
+}
+
+#delete-account #form-container input:focus {
+  outline: none;
+}
+
+#delete-account #buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#delete-account #buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 60px;
+  border-style: none;
+  cursor: pointer;
+  background-color: #2c3033;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all .1s ease-in-out;
+}
+
+#delete-account #buttons button:first-child {
+  background-color: #ed1c24;
+}
+
+#delete-account #form-container button:hover {
+  background-color: #fff;
+  color: #3d20d1;
+  box-shadow: 0px 0px 18px 5px rgba(44,48,51,0.5);
 }

@@ -2,28 +2,33 @@
 ## Echipa: Ghisea Stefan-Mihai, Gogan Catalin - Grupa: 1084
 ## Descriere:
 Aplicația permite crearea unui cont prin care utilizatorul poate să partajeze o experiență, după ce a folosit un mijloc de transport în comun. Pentru utilizatorii anonimi, aplicația va permite căutarea și vizualizarea intrărilor în platforma.
-## Funcționalități:
-### Modulul Utilizator
--	Creare cont utilizator pe baza unor câmpuri sau cu ajutorul unui API extern (GMAIL, Facebook, Linkedin)
--	Modificarea sau dezactivarea contului
--	Resetarea parolei
-### Modulul de Partajare
+## Functionalitati:
+-   Creeare cont, conditii pentru parola
+-   Logare in cont cu validare
+-   Cautare experiente in functie de: Utilizatorul care a postat, Locatie, Mijloc de transport
+-   Daca esti logat pe site:
+-   Schimbare parola: 
+    -   Validare pentru parola veche
+    -   Conditii pentru parola noua
+-   Stergere cont:
+    -   Validare pentru email
+    -   Validare pentru parola
+-   Delogare
+-   Adaugare experienta noua cu validare pentru fiecare camp
 -	Crearea unei experiențe presupune completarea următoarelor câmpuri:
     -	Punctul de plecare (A)
     -	Punctul de sosire (B)
-    -	Mijlocul de transport folosit: bus, metro, tram, etc.
+    -	Mijlocul de transport folosit: metrou, tramvai, autobuz
     -	Ora plecare
     -	Durata călătoriei
     -	Gradul de aglomerare al mijlocului de transport
     -	Observații
     -	Nivelul de satisfacție (smiley faces)
--	Modificarea intrărilor specifice utilizatorului
--	Listarea tuturor experiențelor create de un utilizator
--	Ștergerea unei experiențe
-### Modulul de Căutare
--	Modulul de căutare va trebui să permită utilizatorului introducerea unor cuvinte cheie, după care vor fi afișate rezultatele, sub formă de listă.
--	Modulul va trebui să returneze rezultate relevante în funcție de locație, mijlocul de transport folosit sau destinație
-### Instructiuni rulare
-1. Pornire server - npm run server
-2. Pornire client - npm start
-Aplicatia permite momentan: Creeare, Citire, Modificare, Stergere si Cautare de Experiente ale unui utilizator de transport public.
+-   Stergere experienta - valabil doar daca utilizatorul logat coincide cu utilizatorul care a postat experienta
+-   Modificare experienta - valabil doar daca utilizatorul logat coincide cu utilizatorul care a postat experienta
+## Instructiuni rulare
+-	Pornire server - cd server, npm install, npm start
+-	Pornire client - cd client, npm install, npm start
+### Conturi pentru testare:
+-   vlad@gmail.com - parola1@A
+-   dana@gmail.com - parola123@A
