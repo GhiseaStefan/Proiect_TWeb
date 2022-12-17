@@ -128,6 +128,11 @@ const App = () => {
 
   const delAccount = async (userId, data) => {
     try {
+      for (let i = 0; i < experiente.length; i++) {
+        if (String(experiente[i].userId) === String(userId)) {
+          await deleteExperienta(experiente[i].id);
+        }
+      }
       const response = await fetch(`${SERVER}/users/${userId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },

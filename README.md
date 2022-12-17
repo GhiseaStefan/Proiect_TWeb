@@ -13,6 +13,7 @@ Aplicația permite crearea unui cont prin care utilizatorul poate să partajeze 
 -   Stergere cont:
     -   Validare pentru email
     -   Validare pentru parola
+    -   Stergerea contului conduce la stergerea tuturor postarilor utilizatorului respectiv
 -   Delogare
 -   Adaugare experienta noua cu validare pentru fiecare camp
 -	Crearea unei experiențe presupune completarea următoarelor câmpuri:
